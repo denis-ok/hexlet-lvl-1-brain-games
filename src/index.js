@@ -1,3 +1,3 @@
 import askName from './askName';
 
-export { askName };
+export default askName;
