@@ -1,0 +1,19 @@
+{
+  "name": "brain-games",
+  "version": "1.0.0",
+  "description": "hexlet js project level 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denis-ok/project-lvl1-s168.git"
+  },
+  "author": "Denis Strelkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denis-ok/project-lvl1-s168/issues"
+  },
+  "homepage": "https://github.com/denis-ok/project-lvl1-s168#readme"
+}
