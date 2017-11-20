@@ -1,10 +1,10 @@
 {
-  "name": "brain-games",
-  "version": "0.0.1",
+  "name": "project-lvl1-s168",
+  "version": "0.0.3",
   "description": "hexlet js project level 1",
-  "main": "index.js",
+  "main": "dist/bin/brain-games.js",
   "bin": {
-  "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js"
   },
   "scripts": {
     "babel-node": "babel-node",
@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/denis-ok/project-lvl1-s168#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*"
   }
 }
