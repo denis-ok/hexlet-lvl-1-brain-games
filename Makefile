@@ -6,3 +6,12 @@ start:
 
 publish:
 	npm publish
+
+link:
+	npm run build
+	sudo npm link
+	npm list -g --depth=0
+
+unlink:
+	sudo npm unlink
+	npm list -g --depth=0
