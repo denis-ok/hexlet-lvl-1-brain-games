@@ -8,7 +8,7 @@ publish:
 	npm publish
 
 link:
-	npm run build
+	sudo npm run build
 	sudo npm link
 	npm list -g --depth=0
 
