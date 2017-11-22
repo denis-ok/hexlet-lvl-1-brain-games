@@ -1,11 +1,12 @@
 {
   "name": "project-lvl1-s168",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "hexlet js project level 1: brain games",
   "main": "dist/bin/brain-games.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "scripts": {
     "eslint": "eslint",
