@@ -1,39 +1,25 @@
-import readlineSync from 'readline-sync';
 import { getRandomInt, isEven } from '../number-functions';
-import * as message from '../message';
+import { cons } from '../pairs';
+import start from '../index';
 
-const answerToBoolean = (str) => {
-  if (str.toUpperCase() === 'YES') {
+const rules = 'Answer "yes" if number even otherwise answer "no".\n';
+
+const pairQA = () => {
+  const num = getRandomInt(1, 100);
+  const answer = isEven(num) ? 'Yes' : 'No';
+  const pair = cons(num, answer);
+  return pair;
+};
+
+const compare = (answer, userAnswer) => {
+  const a1 = answer.toUpperCase();
+  const a2 = userAnswer.toUpperCase();
+
+  if (a1 === a2) {
     return true;
   }
-  if (str.toUpperCase() === 'NO') {
-    return false;
-  }
-  return null;
+  return false;
 };
 
-const start = (name, rounds) => {
-  const game = (num, turn, wins) => {
-    if (turn > rounds) {
-      return message.win(name);
-    }
-
-    message.question(num);
-
-    const answer = readlineSync.question('Your Answer: ');
-    const compare = isEven(num) === answerToBoolean(answer);
-    const correctAnswer = isEven(num) ? '"Yes"' : '"No"';
-
-    if (compare === true) {
-      message.correct();
-      return game(getRandomInt(1, 100), turn + 1, wins + 1);
-    }
-
-    console.log(`"${answer}" is wrong answer! :( Correct answer was ${correctAnswer}.`);
-    return message.tryAgain(name);
-  };
-
-  game(getRandomInt(1, 100), 1, 0);
-};
-
-export default start;
+const launch = () => start(rules, pairQA, compare);
+export default launch;

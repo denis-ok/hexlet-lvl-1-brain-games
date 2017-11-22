@@ -1,6 +1,8 @@
-import readlineSync from 'readline-sync';
 import { getRandomInt } from '../number-functions';
-import * as message from '../message';
+import { cons } from '../pairs';
+import start from '../index';
+
+const rules = 'What is the result of the expression?\n';
 
 const numToOperator = (num) => {
   switch (num) {
@@ -15,6 +17,9 @@ const numToOperator = (num) => {
   }
 };
 
+const rndOperand = () => getRandomInt(1, 11);
+const rndOperator = () => numToOperator(getRandomInt(1, 4));
+
 const calc = (op1, op2, operatorStr) => {
   switch (operatorStr) {
     case '+':
@@ -28,32 +33,17 @@ const calc = (op1, op2, operatorStr) => {
   }
 };
 
-const rndOperand = () => getRandomInt(1, 11);
-const rndOperator = () => numToOperator(getRandomInt(1, 4));
-
-const start = (name, rounds) => {
-  const game = (op1, op2, operation, turn) => {
-    if (turn > rounds) {
-      return message.win(name);
-    }
-
-    message.question(`${op1} ${operation} ${op2}`);
-    const userAnswer = readlineSync.question('Your Answer: ');
-
-    const result = calc(op1, op2, operation);
-    const compare = result === Number(userAnswer);
-    const correctAnswer = result;
-
-    if (compare === true) {
-      message.correct();
-      return game(rndOperand(), rndOperand(), rndOperator(), turn + 1);
-    }
-
-    message.wrong(userAnswer, correctAnswer);
-    return message.tryAgain(name);
-  };
-
-  game(rndOperand(), rndOperand(), rndOperator(), 1);
+const pairQA = () => {
+  const op1 = rndOperand();
+  const op2 = rndOperand();
+  const oper = rndOperator();
+  const expression = (`${op1} ${oper} ${op2}`);
+  const answer = calc(op1, op2, oper);
+  const pair = cons(expression, answer);
+  return pair;
 };
 
-export default start;
+const compare = (answer, userAnswer) => answer === Number(userAnswer);
+
+const launch = () => start(rules, pairQA, compare);
+export default launch;

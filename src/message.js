@@ -1,8 +1,12 @@
 const welcome = () => console.log('Welcome to the Brain Games!');
 const hello = name => console.log(`Hello, ${name}!\n`);
 
-const brainEvenStart = () => console.log('Answer "yes" if number even otherwise answer "no".\n');
-const calcStart = () => console.log('What is the result of the expression?\n');
+const rules = (str) => {
+  if (str === null) {
+    return;
+  }
+  console.log(str);
+};
 
 const win = name => console.log(`Congratulations, ${name}! You win! :)`);
 const lose = () => console.log('Sorry, you lose! :(');
@@ -13,4 +17,4 @@ const wrong = (userAnswer, correctAnswer) => console.log(`"${userAnswer}" is wro
 
 const question = str => console.log(`Question: ${str}`);
 
-export { welcome, hello, win, lose, correct, wrong, question, brainEvenStart, calcStart, tryAgain };
+export { welcome, hello, win, lose, correct, wrong, question, rules, tryAgain };

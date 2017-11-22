@@ -1,9 +1,5 @@
 #!/usr/bin/env node
 
-import askName from '../askName';
-import * as message from '../message';
+import start from '../index';
 
-message.welcome();
-const userName = askName();
-message.hello(userName);
-
+start(null);
