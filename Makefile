@@ -30,3 +30,13 @@ unlink:
 	npm list -g --depth=0
 	sudo rm -rf dist
 
+install-global:
+	npm list -g --depth=0
+	sudo npm install -g project-lvl1-s168
+	npm list -g --depth=0
+
+uninstall-global:
+	npm list -g --depth=0
+	sudo npm uninstall -g project-lvl1-s168
+	npm list -g --depth=0
+
