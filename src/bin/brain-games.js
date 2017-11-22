@@ -4,5 +4,6 @@ import askName from '../askName';
 import * as message from '../message';
 
 message.welcome();
-askName();
+const userName = askName();
+message.hello(userName);
 
