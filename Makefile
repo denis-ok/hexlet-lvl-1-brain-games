@@ -11,8 +11,11 @@ start2:
 	npm run babel-node -- 'src/bin/brain-calc.js'
 
 start3:
-	npm run babel-node -- 'src/bin/brain-gcd.js'		
-
+	npm run babel-node -- 'src/bin/brain-gcd.js'
+	
+start4:
+	npm run babel-node -- 'src/bin/brain-balance.js'
+	
 build:
 	rm -rf dist
 	npm run build
