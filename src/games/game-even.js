@@ -1,6 +1,6 @@
 import { getRandomInt, isEven } from '../number-functions';
-import { cons } from '../pairs';
-import start from '../index';
+import { cons } from '../functions';
+import { start } from '../index';
 
 const rules = 'Answer "yes" if number even otherwise answer "no".\n';
 
@@ -11,15 +11,6 @@ const pairQA = () => {
   return pair;
 };
 
-const compare = (answer, userAnswer) => {
-  const a1 = answer.toUpperCase();
-  const a2 = userAnswer.toUpperCase();
+const launch = () => start(rules, pairQA);
 
-  if (a1 === a2) {
-    return true;
-  }
-  return false;
-};
-
-const launch = () => start(rules, pairQA, compare);
 export default launch;

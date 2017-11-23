@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import start from '../index';
+import { showWelcomeText } from '../index';
 
-start(null);
+showWelcomeText();

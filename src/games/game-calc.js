@@ -1,49 +1,49 @@
 import { getRandomInt } from '../number-functions';
-import { cons } from '../pairs';
-import start from '../index';
+import { cons } from '../functions';
+import { start } from '../index';
 
 const rules = 'What is the result of the expression?\n';
 
-const numToOperator = (num) => {
-  switch (num) {
-    case 1:
-      return '+';
+const getRandomOperator = () => {
+  const numToOperator = (num) => {
+    switch (num) {
+      case 1:
+        return '+';
 
-    case 2:
-      return '-';
+      case 2:
+        return '-';
 
-    default:
-      return '*';
-  }
+      default:
+        return '*';
+    }
+  };
+  return numToOperator(getRandomInt(1, 4));
 };
 
-const rndOperand = () => getRandomInt(1, 11);
-const rndOperator = () => numToOperator(getRandomInt(1, 4));
-
-const calc = (op1, op2, operatorStr) => {
-  switch (operatorStr) {
+const calc = (num1, num2, operator) => {
+  switch (operator) {
     case '+':
-      return op1 + op2;
+      return num1 + num2;
 
     case '-':
-      return op1 - op2;
+      return num1 - num2;
 
     default:
-      return op1 * op2;
+      return num1 * num2;
   }
 };
 
 const pairQA = () => {
-  const op1 = rndOperand();
-  const op2 = rndOperand();
-  const oper = rndOperator();
-  const expression = (`${op1} ${oper} ${op2}`);
-  const answer = calc(op1, op2, oper);
+  const num1 = getRandomInt(1, 11);
+  const num2 = getRandomInt(1, 11);
+  const randomOp = getRandomOperator();
+  const expression = (`${num1} ${randomOp} ${num2}`);
+  const answer = calc(num1, num2, randomOp);
   const pair = cons(expression, answer);
   return pair;
 };
 
-const compare = (answer, userAnswer) => answer === Number(userAnswer);
+const launch = () => start(rules, pairQA);
 
-const launch = () => start(rules, pairQA, compare);
 export default launch;
+

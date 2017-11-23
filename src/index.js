@@ -1,43 +1,53 @@
-import readlineSync from 'readline-sync';
-import * as message from './message';
-import askName from './askName';
-import { car, cdr } from './pairs';
+import { askName, askAnswer, car, cdr } from './functions';
 
-const start = (rules, funcPair, funcCompare) => {
-  message.welcome();
-  message.rules(rules);
+const sayWelcome = () => console.log('Welcome to the Brain Games!');
+const showRules = str => console.log(str);
+const sayYouWin = name => console.log(`Congratulations, ${name}! You win! :)`);
+const sayTryAgain = name => console.log(`Lets try again, ${name}!\n`);
+const sayCorrect = () => console.log('Correct!\n');
+const showCorrectAnswer = (userAnswer, correctAnswer) => console.log(`"${userAnswer}" is wrong answer! :( Correct answer was ${correctAnswer}.`);
+const showQuestion = str => console.log(`Question: ${str}`);
+
+const isSameAnswer = (answer1, answer2) => {
+  const a1 = String(answer1).toUpperCase();
+  const a2 = String(answer2).toUpperCase();
+  const compare = a1 === a2;
+  return compare;
+};
+
+const start = (rules, funcPairQA) => {
+  sayWelcome();
+  showRules(rules);
   const userName = askName();
-  message.hello(userName);
 
-  if (rules === null) {
-    return;
-  }
-
-  const game = (pair, rounds, turn) => {
+  const game = (pairQA, rounds, turn) => {
     if (turn > rounds) {
-      return message.win(userName);
+      return sayYouWin(userName);
     }
 
-    const pairQA = pair;
     const question = car(pairQA);
     const trueAnswer = cdr(pairQA);
 
-    console.log(`Question: ${question}`);
+    showQuestion(question);
+    // console.log(`Answer: ${trueAnswer}, rounds: ${rounds}, turn: ${turn}`);
 
-    // console.log(`answer: ${trueAnswer}, rounds: ${rounds}, turn: ${turn}`);
+    const userAnswer = askAnswer();
 
-    const userAnswer = readlineSync.question('Your Answer: ');
-
-    if (funcCompare(trueAnswer, userAnswer)) {
-      message.correct();
-      return game(funcPair(), 3, turn + 1);
+    if (isSameAnswer(trueAnswer, userAnswer)) {
+      sayCorrect();
+      return game(funcPairQA(), 3, turn + 1);
     }
 
-    message.wrong(userAnswer, trueAnswer);
-    return message.tryAgain(userName);
+    showCorrectAnswer(userAnswer, trueAnswer);
+    return sayTryAgain(userName);
   };
 
-  game(funcPair(), 3, 1);
+  game(funcPairQA(), 3, 1);
 };
 
-export default start;
+const showWelcomeText = () => {
+  sayWelcome();
+  askName();
+};
+
+export { start, showWelcomeText };
