@@ -1,5 +1,4 @@
-import { getRandomInt } from '../number-functions';
-import { cons } from '../functions';
+import { getRandomInt, cons } from '../utils';
 import { start } from '../index';
 
 const rules = 'What is the result of the expression?\n';

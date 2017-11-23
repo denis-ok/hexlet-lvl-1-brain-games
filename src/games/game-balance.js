@@ -1,5 +1,4 @@
-import { getRandomInt } from '../number-functions';
-import { cons } from '../functions';
+import { getRandomInt, cons } from '../utils';
 import { start } from '../index';
 
 const rules = 'Balance the given number.\n';

@@ -1,5 +1,4 @@
-import { getRandomInt, isEven } from '../number-functions';
-import { cons } from '../functions';
+import { getRandomInt, isEven, cons } from '../utils';
 import { start } from '../index';
 
 const rules = 'Answer "yes" if number even otherwise answer "no".\n';

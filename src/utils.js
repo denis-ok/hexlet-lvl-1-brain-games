@@ -35,5 +35,9 @@ const greatestCommonDiv = (num1, num2) => {
   return greatestCommonDiv((num1 - num2) / 2, num2); // 7
 };
 
-export { getRandomInt, isEven, greatestCommonDiv };
+const cons = (x, y) => f => f(x, y);
+const car = p => p(x => x);
+const cdr = p => p((x, y) => y);
+
+export { getRandomInt, isEven, greatestCommonDiv, cons, car, cdr };
 

@@ -1,4 +1,16 @@
-import { askName, askAnswer, car, cdr } from './functions';
+import readlineSync from 'readline-sync';
+import { car, cdr } from './utils';
+
+const askName = () => {
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!\n`);
+  return name;
+};
+
+const askAnswer = () => {
+  const userAnswer = readlineSync.question('Your Answer: ');
+  return userAnswer;
+};
 
 const sayWelcome = () => console.log('Welcome to the Brain Games!');
 const showRules = str => console.log(str);

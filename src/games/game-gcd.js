@@ -1,5 +1,4 @@
-import { getRandomInt, greatestCommonDiv } from '../number-functions';
-import { cons } from '../functions';
+import { getRandomInt, greatestCommonDiv, cons } from '../utils';
 import { start } from '../index';
 
 const rules = 'Find the greatest common divisor of given numbers.\n';
