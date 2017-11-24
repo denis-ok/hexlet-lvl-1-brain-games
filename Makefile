@@ -17,7 +17,10 @@ start4:
 	npm run babel-node -- 'src/bin/brain-balance.js'
 
 start5:
-	npm run babel-node -- 'src/bin/brain-progression.js'	
+	npm run babel-node -- 'src/bin/brain-progression.js'
+
+start6:
+	npm run babel-node -- 'src/bin/brain-prime.js'		
 	
 build:
 	rm -rf dist
