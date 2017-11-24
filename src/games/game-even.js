@@ -1,5 +1,5 @@
 import { getRandomInt, isEven, cons } from '../utils';
-import { start } from '../index';
+import { startGame } from '../index';
 
 const rules = 'Answer "yes" if number even otherwise answer "no".\n';
 
@@ -10,6 +10,6 @@ const pairQA = () => {
   return pair;
 };
 
-const launch = () => start(rules, pairQA);
+const launch = () => startGame(rules, pairQA);
 
 export default launch;

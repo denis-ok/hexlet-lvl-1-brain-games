@@ -1,5 +1,5 @@
 import { getRandomInt, cons } from '../utils';
-import { start } from '../index';
+import { startGame } from '../index';
 
 const rules = 'What is the result of the expression?\n';
 
@@ -42,7 +42,7 @@ const pairQA = () => {
   return pair;
 };
 
-const launch = () => start(rules, pairQA);
+const launch = () => startGame(rules, pairQA);
 
 export default launch;
 

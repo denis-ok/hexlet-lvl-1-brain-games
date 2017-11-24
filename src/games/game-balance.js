@@ -1,5 +1,5 @@
 import { getRandomInt, cons } from '../utils';
-import { start } from '../index';
+import { startGame } from '../index';
 
 const rules = 'Balance the given number.\n';
 
@@ -53,7 +53,7 @@ const pairQA = () => {
   return pair;
 };
 
-const launch = () => start(rules, pairQA);
+const launch = () => startGame(rules, pairQA);
 
 export default launch;
 

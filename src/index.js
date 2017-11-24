@@ -27,7 +27,7 @@ const isSameAnswer = (answer1, answer2) => {
   return compare;
 };
 
-const start = (rules, funcPairQA) => {
+const startGame = (rules, funcPairQA) => {
   sayWelcome();
   showRules(rules);
   const userName = askName();
@@ -62,4 +62,4 @@ const showWelcomeText = () => {
   askName();
 };
 
-export { start, showWelcomeText };
+export { startGame, showWelcomeText };

@@ -1,5 +1,5 @@
 import { getRandomInt, cons } from '../utils';
-import { start } from '../index';
+import { startGame } from '../index';
 
 const rules = 'Is this number prime?\n';
 
@@ -32,6 +32,6 @@ const pairQA = () => {
   return cons(question, answer);
 };
 
-const launch = () => start(rules, pairQA);
+const launch = () => startGame(rules, pairQA);
 
 export default launch;
