@@ -1,7 +1,9 @@
-import { getRandomInt, isEven, cons } from '../utils';
+import { getRandomInt, cons } from '../utils';
 import { startGame } from '../index';
 
 const rules = 'Answer "yes" if number even otherwise answer "no".\n';
+
+const isEven = num => (num % 2 === 0);
 
 const pairQA = () => {
   const num = getRandomInt(1, 100);
