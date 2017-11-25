@@ -3,23 +3,40 @@ import { startGame } from '../index';
 
 const rules = 'What number is missing in this progression?';
 
-const getArifmProgWithSkip = (initNum, step, position) => {
+const getNthNumOfProg = (initNum, step, position) => initNum + ((position - 1) * step);
+
+const getArifmProgWithSkip = (initNum, step, position) => { // iterative process
   const quantity = 10;
-  const iter = (counter, current, acc) => {
+
+  const iter = (counter, acc) => {
+    const current = getNthNumOfProg(initNum, step, counter);
+    if (counter === position) {
+      return iter(counter + 1, `${acc}.. `);
+    }
     if (counter > quantity) {
       return acc;
     }
-    if (counter === position) {
-      return iter(counter + 1, current + step, `${acc}.. `);
-    }
-
-    return iter(counter + 1, current + step, `${acc}${String(current)} `);
+    return iter(counter + 1, `${acc}${current} `);
   };
 
-  return iter(1, initNum, '');
+  return iter(1, '');
 };
 
-const getNthNumOfProg = (initNum, step, position) => initNum + ((position - 1) * step);
+/*
+const getArifmProgWithSkip1 = (initNum, step, position, counter) => { // recursive process
+  const quantity = 10;
+  const current = getNthNumOfProg(initNum, step, counter);
+
+  if (counter === position) {
+    return `.. ${getArifmProgWithSkip1(initNum, step, position, counter + 1)}`;
+  }
+  if (counter === quantity) {
+    return current;
+  }
+
+  return `${String(current)} ${getArifmProgWithSkip1(initNum, step, position, counter + 1)}`;
+};
+*/
 
 const pairQA = () => {
   const initNum = getRandomInt(1, 10);
