@@ -1,7 +1,7 @@
 import { getRandomInt, cons } from '../utils';
 import { startGame } from '../index';
 
-const rules = 'What is the result of the expression?\n';
+const rules = 'What is the result of the expression?';
 
 const getRandomOperator = () => {
   const numToOperator = (num) => {

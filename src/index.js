@@ -13,7 +13,7 @@ const askAnswer = () => {
 };
 
 const sayWelcome = () => console.log('Welcome to the Brain Games!');
-const showRules = str => console.log(str);
+const showRules = str => console.log(`${str}\n`);
 const sayYouWin = name => console.log(`Congratulations, ${name}! You win! :)`);
 const sayTryAgain = name => console.log(`Lets try again, ${name}!\n`);
 const sayCorrect = () => console.log('Correct!\n');

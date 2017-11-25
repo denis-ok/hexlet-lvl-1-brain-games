@@ -1,7 +1,7 @@
 import { getRandomInt, cons } from '../utils';
 import { startGame } from '../index';
 
-const rules = 'What number is missing in this progression?\n';
+const rules = 'What number is missing in this progression?';
 
 const getArifmProgWithSkip = (initNum, step, position) => {
   const quantity = 10;

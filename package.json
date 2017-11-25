@@ -1,6 +1,6 @@
 {
   "name": "project-lvl1-s168",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "hexlet js project level 1: brain games",
   "main": "dist/bin/brain-games.js",
   "bin": {

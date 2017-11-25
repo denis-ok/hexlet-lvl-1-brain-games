@@ -1,7 +1,7 @@
 import { getRandomInt, cons } from '../utils';
 import { startGame } from '../index';
 
-const rules = 'Find the greatest common divisor of given numbers.\n';
+const rules = 'Find the greatest common divisor of given numbers.';
 
 const greatestCommonDiv = (num1, num2) => {
   if (num2) {

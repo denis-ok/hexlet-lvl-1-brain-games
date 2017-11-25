@@ -1,7 +1,7 @@
 import { getRandomInt, cons } from '../utils';
 import { startGame } from '../index';
 
-const rules = 'Balance the given number.\n';
+const rules = 'Balance the given number.';
 
 const digitsSum = (num) => {
   const numStr = String(num);

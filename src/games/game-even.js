@@ -1,7 +1,7 @@
 import { getRandomInt, cons } from '../utils';
 import { startGame } from '../index';
 
-const rules = 'Answer "yes" if number even otherwise answer "no".\n';
+const rules = 'Answer "yes" if number even otherwise answer "no".';
 
 const isEven = num => (num % 2 === 0);
 

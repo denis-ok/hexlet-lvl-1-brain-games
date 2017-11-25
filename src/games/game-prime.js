@@ -1,7 +1,7 @@
 import { getRandomInt, cons } from '../utils';
 import { startGame } from '../index';
 
-const rules = 'Is this number prime?\n';
+const rules = 'Is this number prime?';
 
 const isPrime = (num) => {
   if (num <= 1 || num === 2) {
