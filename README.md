@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/571ab6d551ce54fec7a1/maintainability)](https://codeclimate.com/github/denis-ok/project-lvl1-s168/maintainability) [![Build Status](https://travis-ci.org/denis-ok/project-lvl1-s168.svg?branch=master)](https://travis-ci.org/denis-ok/project-lvl1-s168)
+[![Maintainability](https://api.codeclimate.com/v1/badges/571ab6d551ce54fec7a1/maintainability)](https://codeclimate.com/github/denis-ok/project-lvl1-s168/maintainability) [![Build Status](https://travis-ci.org/denis-ok/hexlet-lvl-1-brain-games.svg?branch=master)](https://travis-ci.org/denis-ok/hexlet-lvl-1-brain-games)
 ### Brain-Games
 **Hexlet JavaScript Project: level 1**
 ___
